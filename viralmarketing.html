@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상생하는 마케팅 위고플래닛 | WEGOPLANET</title>
+
+  <!-- CSS Preload + Fallback -->
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+  <!-- SVG Logo Preload -->
+  <link rel="preload" href="images/logo_w.svg" as="image" type="image/svg+xml">
+
+  <!-- 폰트 Preload (예시) -->
+  <link rel="preload" href="fonts/Pretendard.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- 검색엔진 최적화(SEO) -->
+  <meta name="description" content="위고플래닛은 상생하는 마케팅을 추구하는 전문 마케팅 회사입니다. 브랜드, 바이럴, 공공기관 마케팅까지 통합 서비스 제공.">
+  <meta name="keywords" content="위고플래닛, 마케팅, 브랜드마케팅, 바이럴마케팅, 공공기관 마케팅, WEGOPLANET">
+  <meta name="author" content="위고플래닛">
+
+  <!-- Open Graph (SNS 공유 시 카드 미리보기) -->
+  <meta property="og:title" content="상생하는 마케팅 위고플래닛 | WEGOPLANET">
+  <meta property="og:description" content="브랜드, 바이럴, 공공기관 마케팅의 든든한 파트너.">
+  <meta property="og:image" content="images/og_image.jpg"> <!-- 대표 이미지 URL -->
+  <meta property="og:url" content="https://www.wegoplanet.co.kr">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="상생하는 마케팅 위고플래닛 | WEGOPLANET">
+  <meta name="twitter:description" content="브랜드, 바이럴, 공공기관 마케팅의 든든한 파트너.">
+  <meta name="twitter:image" content="images/og_image.jpg">
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- CSS / JAVA -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header id="main-header" class="header-default">
+    <div class="hdinner">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo_w.svg" class="logo-img" alt="headerlogo"></a>
+      </div>
+
+      <nav id="nav-pc" class="nav-pc">
+        <ul>
+          <li class="has-submenu">
+            <a href="wego.html">(주)위고플래닛</a>
+            <ul class="sub">
+              <li><a href="wego.html">위고플래닛</a></li>
+              <li><a href="organization.html">조직도</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="brandblog.html">브랜드마케팅</a>
+            <ul class="sub">
+              <li><a href="brandblog.html">브랜드 블로그</a></li>
+              <li><a href="brandinsta.html">브랜드 인스타그램</a></li>
+            </ul>
+          </li>
+          <li><a href="viralmarketing.html">바이럴마케팅</a></li>
+          <li class="has-submenu">
+            <a href="public.html">공공기관</a>
+            <ul class="sub">
+              <li><a href="public.html">공공기관 마케팅</a></li>
+            </ul>
+          </li>
+          <li><a href="askform.html">광고문의</a></li>
+        </ul>
+      </nav>
+      <div id="hamburger" class="hamburger" role="button" tabindex="0" aria-label="모바일 메뉴 열기" aria-expanded="false" aria-controls="nav-mo">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>      
+    </div>
+    <nav id="nav-mo" class="nav-mo">      
+      <ul>
+        <li class="has-submenu">
+          <a href="wego.html">(주)위고플래닛</a>
+          <ul class="sub-mo">
+            <li><a href="wego.html">위고플래닛</a></li>
+            <li><a href="organization.html">조직도</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="brandblog.html">브랜드마케팅</a>
+          <ul class="sub-mo">
+            <li><a href="brandblog.html">브랜드 블로그</a></li>
+            <li><a href="brandinsta.html">브랜드 인스타그램</a></li>
+          </ul>
+        </li>
+        <li><a href="viralmarketing.html">바이럴마케팅</a></li>
+        <li class="has-submenu">
+          <a href="public.html">공공기관</a>
+          <ul class="sub-mo">
+            <li><a href="public.html">공공기관 마케팅</a></li>
+          </ul>
+        </li>
+        <li><a href="askform.html">광고문의</a></li>
+      </ul>
+    </nav>
+
+  </header> 
+  <main>
+    <section class="banner viral">
+        <div class="inner">
+            <div class="container">
+                <h3>Viral Marketing</h3> 
+                <h2>바이럴 마케팅</h2>
+                <p>
+                    '퍼지는 콘텐츠'를 만들지 않습니다. <span>'퍼뜨리고 싶어지는 마음'</span>을 만듭니다.<br>
+                    (주)위고플래닛은 사람이 말하고 싶게 만드는 <span>본질</span>을 디자인하겠습니다.
+                </p>               
+            </div>
+            <img src="images/banner_viralmarketing.png" alt="banner_viralmarketing">
+        </div>
+    </section>
+    <section class="detail viral">
+        <div class="inner">
+            <div class="part" data-aos="fade-up" data-aos-duration="800">
+                <h2>체험단 마케팅</h2>
+                <div class="recommend">
+                    <p>
+                      체험단 마케팅은 후기, 영상 등 다양한 방식으로 소비자의 참여를 유도하는 효과적인 홍보 수단입니다. <br>
+                      (주)위고플래닛은 단순 후기보다 <span>'참여'의 감정 공유</span>와 <span>콘첸츠 문화화</span>에 집중합니다.
+                    </p>
+                </div>
+                <div class="title">
+                  <div class="wrap">
+                    <h3>단순한 리뷰어가 아닌<br>브랜드 세계관에 들어온 <span>첫 번째 팬</span></h3>
+                    <p>
+                      체험단은 흔히들 말하는 <span>'리뷰어'</span>가 아닙니다. 우리의 브랜드 세계관에 들어온 <span>첫 번째 팬</span>입니다.<br>
+                      후기를 넘어 콘텐츠에 감정을 남기고, 스스로 브랜드 앰버서더가 될 수 있도록 만듭니다.<br>
+                      단순 체험단이 아닌 <span>'문화와 브랜드에 스며드는 체험단'</span>을 제공합니다.
+                    </p>                    
+                  </div>
+                </div>
+                <div class="process">
+                    <div class="wrap">
+                        <div class="left">
+                            <div class="subtitle">
+                                <h4>Process</h4>
+                                <h4>체험단 마케팅 진행과정</h4>
+                                <p>
+                                    (주)위고플래닛은 하나의 작업을 하더라도 <br>
+                                    <span>체계적인 진행</span>을 합니다.
+                                </p>                                    
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="top">
+                                <div class="box">
+                                    <h5>01</h5>
+                                    <img src="images/icon_Petition.svg" alt="icon_Petition">
+                                    <p>온라인 계약서 서명 및<br>대금지급</p>
+                                </div>
+                                <div class="box">
+                                    <h5>02</h5>
+                                    <img src="images/icon_Chat.svg" alt="icon_chat">
+                                    <p>바이럴마케팅부서<br>단톡방 초대</p>
+                                </div>
+                                <div class="box">
+                                    <h5>03</h5>
+                                    <img src="images/icon_SelectAll.svg" alt="icon_Select">
+                                    <p>(주)위고플래닛 체험단<br>가이드라인 작성</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="box">
+                                    <h5>04</h5>
+                                    <img src="images/icon_Index.svg" alt="icon_Index">
+                                    <p>체험단 리스트 전달</p>
+                                </div>
+                                <div class="box">
+                                    <h5>05</h5>
+                                    <img src="images/icon_HireMe.svg" alt="icon_Hire">
+                                    <p>체험단 선정<br>및 일정 체크</p>
+                                </div>
+                                <div class="box">
+                                    <h5>06</h5>
+                                    <img src="images/icon_ChatMessage.svg" alt="icon_message">
+                                    <p>서비스 또는 제품 체험 후<br>후기 작성</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="part" data-aos="fade-up" data-aos-duration="800">
+                <h2>기자단 마케팅</h2>
+                <div class="recommend">
+                    <p>
+                      기자단 마케팅은 브랜드를 외부 시선에서 바라보고 콘텐츠를 제작하는 방식으로,<br>
+                      체험단과 달리 다양한 관점에서 <span>브랜드를 조명</span>하는 데 중점을 둡니다.
+                    </p>
+                </div>
+                <div class="title">
+                  <div class="wrap">
+                    <h3>단순 리뷰가 아닌 브랜드의 새로운 해석,<br><span>유입의 도화선</span>을 만듭니다.</h3>
+                    <p>
+                      단순 리뷰가 아닌 브랜드의 <span>새로운 해석</span>이 되고 <span>유입의 도화선</span>을 만듭니다.<br>
+                      (주)위고플래닛의 기자단은 단순한 배포를 넘어서서 브랜드를 관찰하고, 해석하고,<br>
+                      새로운 각도로 바라볼 수 있는 시선을 가진 크리에이터들입니다. <br>
+                      브랜드를 바라보는 눈으로 일방적인 정보가 아닌 감정을 담아 공유합니다.
+                    </p>                    
+                  </div>
+                </div>
+                <div class="process">
+                    <div class="wrap">
+                        <div class="left">
+                            <div class="subtitle">
+                                <h4>Process</h4>
+                                <h4>기자단 마케팅 진행과정</h4>
+                                <p>
+                                    (주)위고플래닛은 하나의 작업을 하더라도 <br>
+                                    <span>체계적인 진행</span>을 합니다.
+                                </p>                                    
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="top">
+                                <div class="box">
+                                    <h5>01</h5>
+                                    <img src="images/icon_Petition.svg" alt="icon_Petition">
+                                    <p>온라인 계약서 서명 및<br>대금지급</p>
+                                </div>
+                                <div class="box">
+                                    <h5>02</h5>
+                                    <img src="images/icon_Chat.svg" alt="icon_chat">
+                                    <p>바이럴마케팅부서<br>단톡방 초대</p>
+                                </div>
+                                <div class="box">
+                                    <h5>03</h5>
+                                    <img src="images/icon_SelectAll.svg" alt="icon_Select">
+                                    <p>(주)위고플래닛 기자단<br>가이드라인 작성</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="box">
+                                    <h5>04</h5>
+                                    <img src="images/icon_HireMe.svg" alt="icon_Hire">
+                                    <p>기자단 선정</p>
+                                </div>
+                                <div class="box">
+                                    <h5>05</h5>
+                                    <img src="images/icon_ChatMessage.svg" alt="icon_message">
+                                    <p>서비스 또는 제품 체험 후<br>후기 작성</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="part" data-aos="fade-up" data-aos-duration="800">
+                <h2>인플루언서 마케팅</h2>
+                <div class="recommend">
+                    <p>
+                      일반 대행사와 달리 (주)위고플래닛은 유령계정이 아닌 실제 <span>영향력</span>이 있는 인플루언서를 선별합니다. <br>
+                      브랜드를 사람답게 이야기하고 팬과 소통할 수 있는 <span>진정성</span>있는 마케팅을 추구합니다.
+                    </p>
+                </div>
+                <div class="title">
+                  <div class="wrap">
+                    <h3>브랜드와 소비자 간의<br><span>공감의 연결고리</span>를 만드는 인플루언서</h3>
+                    <p>
+                      블로그, 인스타그램, 유튜브, 틱톡 등 다양한 인플루언서 광고를 진행합니다.<br>
+                      업종에 맞는 <span>진실된 인플루언서</span>를 선별해 최고의 효율을 만들어 드립니다.<br>
+                      브랜드와 소비자 간의 <span>공감의 연결고리</span>를 만들어줄 수 있는 인플루언서를 모집하고 기획합니다.
+                    </p>                    
+                  </div>
+                </div>
+                <div class="process">
+                    <div class="wrap">
+                        <div class="left">
+                            <div class="subtitle">
+                                <h4>Process</h4>
+                                <h4>인플루언서 마케팅 진행과정</h4>
+                                <p>
+                                    (주)위고플래닛은 하나의 작업을 하더라도 <br>
+                                    <span>체계적인 진행</span>을 합니다.
+                                </p>                                    
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="top">
+                                <div class="box">
+                                    <h5>01</h5>
+                                    <img src="images/icon_Petition.svg" alt="icon_Petition">
+                                    <p>온라인 계약서 서명 및<br>대금지급</p>
+                                </div>
+                                <div class="box">
+                                    <h5>02</h5>
+                                    <img src="images/icon_Chat.svg" alt="icon_chat">
+                                    <p>바이럴마케팅부서<br>단톡방 초대</p>
+                                </div>
+                                <div class="box">
+                                    <h5>03</h5>
+                                    <img src="images/icon_SelectAll.svg" alt="icon_Select">
+                                    <p>(주)위고플래닛 인플루언서<br>가이드라인 작성</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="box">
+                                    <h5>04</h5>
+                                    <img src="images/icon_HireMe.svg" alt="icon_Hire">
+                                    <p>인플루언서 모집</p>
+                                </div>
+                                <div class="box">
+                                    <h5>05</h5>
+                                    <img src="images/icon_ChatMessage.svg" alt="icon_message">
+                                    <p>포스팅 및 피드 발행</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="part" data-aos="fade-up" data-aos-duration="800" >
+                <h2>카페바이럴 마케팅</h2>
+                <div class="recommend">
+                    <p>
+                      카페 특성에 맞춘 감정과 취향을 반영해 자연스럽게 <span>스며드는 콘텐츠</span>를 설계합니다.<br>
+                      단순 후기 유도가 아닌, 고객이 <span>먼저 찾아오게</span> 하는 흐름을 만듭니다. 
+                    </p>
+                </div>
+                <div class="title">
+                  <div class="wrap">
+                    <h3>단순 홍보를 넘어선<br><span>기억에 남는 콘텐츠</span></h3>
+                    <p>
+                      단순한 홍보가 아닌 찾아가고 싶게끔, 구매하고 싶게끔 분위기 있는 콘텐츠를 담아냅니다.<br>
+                      단순한 제품의 홍보보다 제품의 분위기를 일반 콘텐츠보다 <span>기억에 남도록</span> 만들어냅니다.<br>
+                      맘카페, 커뮤니티카페 등 거의 모든 카페에서 진행 가능합니다. (문의요망)
+                    </p>                    
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+  <section class="ask">
+    <div class="inner">
+      <h2>
+        같이 상생하는 마케팅을 하실 분들만<br>
+        문의해주시길 부탁드립니다.
+      </h2>
+      <a class="btn" href="askform.html">문의하기</a>
+    </div>
+  </section>
+  <footer>
+    <div class="inner">
+      <div class="wrap">
+        <div class="left">
+          <div class="top">
+            <p>(주)위고플래닛 &nbsp; | &nbsp; 대표이사 장지형</p>
+            <p>사업자등록번호 : 488-81-03491</p>
+            <p>
+              <a href="https://blog.naver.com/wegoplanet" target="_blank">공식 블로그</a>
+            </p>
+          </div>
+          <div class="bottom">
+            <div class="l">
+              <p>Tel</p>
+              <p>Contact</p>
+              <p>Address</p>
+            </div>
+            <div class="r">
+              <p>070-4705-2929</p>
+              <p>wegoplanet@wegoplanet.co.kr</p>
+              <p>대구광역시 북구 동변로20길  16, 2F</p>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="images/footer_logo.svg" alt="footer_logo">
+        </div>        
+      </div>
+      <div class="copy">
+        <p>&copy; 2025 Wegoplanet Corp. All rights reserved. Icons by Icons8</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init();
+  </script>  
+</body>
+</html>
