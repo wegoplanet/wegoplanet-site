@@ -585,6 +585,9 @@ main #client .inner .wrap img {
   filter: grayscale(100%);
   opacity: 0.6;
   transition: all 0.3s;
+  object-fit: contain;
+  width: auto;
+  height: auto;
 }
 main #client .inner .wrap img:hover {
   filter: grayscale(0%);
