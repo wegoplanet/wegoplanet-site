@@ -1269,6 +1269,10 @@
     margin-bottom: 2.5rem;
   }
 
+  footer .popup-txt .popup-inner {
+    max-height: 520px;
+  }
+
   /* WEGOPLANET */
   main #wego-symbol .inner {
     height: 400px;
@@ -2699,10 +2703,6 @@
 
   footer .popup-txt .popup-inner {
     max-height: 450px;
-    overflow-y: auto;
-    background-color: #fff;
-    text-align: center;
-    padding: 2rem 3rem;
   }
 
   /* WEGOPLANET */
