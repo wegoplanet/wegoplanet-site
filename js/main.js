@@ -182,3 +182,52 @@ window.addEventListener('scroll', function () {
   }
 });
 
+// popup
+
+document.addEventListener("DOMContentLoaded", function () {
+  const privacyBtn = document.querySelector(".privacy");
+  const termsBtn = document.querySelector(".terms");
+  const popupPrivacy = document.querySelector(".popup-privacy");
+  const popupTerms = document.querySelector(".popup-terms");
+  const closeButtons = document.querySelectorAll(".popup-txt button");
+
+  function fadeIn(popup) {
+    popup.style.display = "flex"; // 중앙 정렬 위해 flex 사용
+    popup.style.opacity = 0;
+
+    // .popup-inner 스크롤 맨 위로 초기화
+    setTimeout(() => {
+      const inner = popup.querySelector(".popup-inner");
+      if (inner) inner.scrollTop = 0;
+    }, 0);
+
+    let opacity = 0;
+    const fade = setInterval(() => {
+      opacity += 0.1;
+      popup.style.opacity = opacity;
+      if (opacity >= 1) clearInterval(fade);
+    }, 30);
+  }
+
+  function fadeOut(popup) {
+    let opacity = 1;
+    const fade = setInterval(() => {
+      opacity -= 0.1;
+      popup.style.opacity = opacity;
+      if (opacity <= 0) {
+        clearInterval(fade);
+        popup.style.display = "none";
+      }
+    }, 30);
+  }
+
+  privacyBtn.addEventListener("click", () => fadeIn(popupPrivacy));
+  termsBtn.addEventListener("click", () => fadeIn(popupTerms));
+
+  closeButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const popup = btn.closest(".popup");
+      fadeOut(popup);
+    });
+  });
+});
