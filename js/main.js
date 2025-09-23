@@ -231,3 +231,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+//wg-popup
+  document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.querySelector('.wg-overlay');
+    const confirmBtn = document.getElementById('popupConfirmBtn');
+
+    if (!overlay || !confirmBtn) return;
+
+    // 초기엔 잠금
+    document.documentElement.classList.add('wg-no-scroll');
+    document.body.classList.add('wg-no-scroll');
+
+    function unlockScroll() {
+      overlay.classList.add('hidden');                // 팝업 숨김
+      document.documentElement.classList.remove('wg-no-scroll');
+      document.body.classList.remove('wg-no-scroll');
+      // 혹시 인라인 스타일로 잠겼다면 이것도 해제
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
+
+    confirmBtn.addEventListener('click', function (e) {
+      e.preventDefault(); // <a>일 때 앵커 이동 방지
+      unlockScroll();
+    });
+
+    // (선택) 배경 클릭으로 닫기 — 해시 이동 대신 JS로
+    const bg = document.querySelector('.wg-overlay-bg');
+    if (bg) bg.addEventListener('click', unlockScroll);
+  });

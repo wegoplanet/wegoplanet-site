@@ -67,6 +67,7 @@
   <meta name="naver-site-verification" content="bf091c44de17cc167806fdfe6abdaf9275187cc6" />
 </head>
 <body>
+  <div id="close" aria-hidden="true"></div>
   <header id="main-header" class="header-default">
     <div class="hdinner">
       <div class="logo">
@@ -531,7 +532,40 @@
     </div>
   </footer>
 
+  
+  <!-- 리뉴얼 안내 팝업 (스크립트 없이 :target으로 제어) -->
+  <div class="wg-overlay" id="renewal" role="dialog" aria-modal="true" aria-labelledby="wgRenewalTitle" aria-describedby="wgRenewalDesc">
+    <!-- 배경: 클릭 시 #close로 이동하여 팝업 닫힘 -->
+    <a class="wg-overlay-bg" aria-label="배경 클릭하여 닫기"></a>
+
+    <div class="wg-popup" role="document">
+      <header class="wg-popup-header">
+        <h2 class="wg-popup-title" id="wgRenewalTitle">홈페이지 리뉴얼 중입니다.</h2>
+      </header>
+
+      <div class="wg-popup-body" id="wgRenewalDesc">
+        <p><strong>현재 홈페이지 리뉴얼 중입니다.</strong></p>
+        <p>(주)위고플래닛은 병원만 전문적으로 취급하는 광고대행사로서 <br> 병원마케팅의 높은 퀄리티를 유지하기위해 병원 외에 업종에 <br>대해서는 일절 상담을 받지 않습니다.</p>
+        <p>저희는 고객이 아니라 한 뜻으로 함께하는 동료를 찾습니다. </p>
+
+        <p>1지역구 1진료과목 한정해서 마케팅을 진행하고 있으며, <br>이미 진행 중인 지역은 상담이 어려울 수 있습니다.</p>
+
+        <p>그만큼 병원 하나 하나에 집중할 준비가 되어있습니다.</p>
+       
+        <p>단순한 일발성으로 광고성이 강한 광고는 일절 진행하지 않습니다.</p>
+        
+        <p>
+        병원의 브랜드를 성장시킬 원장님들만 연락주세요.</p>
+      </div>
+
+      <footer class="wg-popup-footer">
+        <button type="button" class="wg-btn wg-primary" id="popupConfirmBtn">확인</button>
+      </footer>
+    </div>
+  </div>
+
   <script>
+
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }

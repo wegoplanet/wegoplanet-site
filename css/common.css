@@ -284,3 +284,134 @@ footer .popup-txt button {
   cursor: pointer;
   z-index: 1101;
 }
+
+/* wg-popup */
+
+/* ===== Wegoplanet :target 팝업 (No-JS) ===== */
+:root {
+  --wg-overlay-bg: rgba(0,0,0,0.45);
+  --wg-popup-bg: #fff;
+  --wg-text: #111827;
+  --wg-accent: #4A2BE2;
+  --wg-radius: 1rem;
+  --wg-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  --wg-border: #e5e7eb;
+}
+
+/* 오버레이(기본: 표시) */
+.wg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999; /* 헤더/배너 위로 */
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+/* 배경 */
+.wg-overlay-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--wg-overlay-bg);
+  display: block;
+}
+
+/* #close가 타겟이면 팝업 숨김 */
+#close:target ~ .wg-overlay {
+  display: none;
+}
+
+/* 팝업 박스 */
+.wg-popup {
+  position: relative;
+  width: min(92vw, 520px);
+  background: var(--wg-popup-bg);
+  color: var(--wg-text);
+  border-radius: var(--wg-radius);
+  box-shadow: var(--wg-shadow);
+  overflow: hidden;
+  animation: wgFadeIn 200ms ease-out;
+}
+
+/* 헤더 */
+.wg-popup-header {
+  text-align: center;
+  padding: 16px 18px;
+  background: #f1f5f9;
+  border-bottom: 1px solid var(--wg-border);
+}
+.wg-popup-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+
+
+/* 본문 & 푸터 */
+.wg-popup-body { 
+  padding: 2rem 3rem; 
+  line-height: 1.6em; 
+  font-size: 1rem; 
+  text-align: center;
+}
+.wg-popup-body p { margin: 0 0 1rem; }
+
+.wg-popup-footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* 버튼 */
+.wg-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: var(--wg-text);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.wg-primary {
+  background: var(--wg-accent);
+  border-color: var(--wg-accent);
+  color: #fff;
+}
+.wg-btn:focus-visible {
+  outline: 2px solid var(--wg-accent);
+  outline-offset: 2px;
+}
+
+
+/* 팝업 숨김 상태 */
+.wg-overlay.hidden { display: none; }
+
+/* 팝업이 화면에 '보일 때만' 스크롤 잠금 */
+body:has(.wg-overlay:not(.hidden)) { overflow: hidden; }
+
+/* 보조: JS에서 쓰는 클래스 */
+html.wg-no-scroll, body.wg-no-scroll { overflow: hidden; }
+
+/* 팝업 닫힘 상태 */
+.wg-overlay.hidden { display: none; }
+
+/* :has() 미지원 브라우저용 보조 클래스 */
+.wg-no-scroll { overflow: hidden; }
+
+/* 안전영역 패딩(선택) */
+@supports (padding: max(0px)) {
+  .wg-overlay { 
+    padding: max(24px, env(safe-area-inset-top))
+             max(24px, env(safe-area-inset-right))
+             max(24px, env(safe-area-inset-bottom))
+             max(24px, env(safe-area-inset-left));
+  }
+}
+
+@keyframes wgFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
