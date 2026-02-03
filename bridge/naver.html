@@ -2,32 +2,40 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4NLV96SZPZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-
     gtag('js', new Date());
 
-    // ✅ 핵심: 현재 URL(쿼리 포함)을 명시 + beacon 전송
-    gtag('config', 'G-4NLV96SZPZ', {
-      transport_type: 'beacon',
-      page_location: window.location.href,
-      page_path: window.location.pathname + window.location.search
-    });
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
 
-    // ✅ 핵심: 이벤트 전송이 끝나면 이동 (최대 2초까지만 기다림)
-    setTimeout(function () {
-      gtag('event', 'bridge_to_naver_booking', {
-        event_callback: function () {
-          window.location.href = "https://booking.naver.com/booking/13/bizes/1541146";
-        },
-        event_timeout: 2000
-      });
-    }, 300); // gtag 로딩/초기화 약간의 여유
+    const utm_source   = getParam('utm_source');
+    const utm_medium   = getParam('utm_medium');
+    const utm_campaign = getParam('utm_campaign');
+    const utm_content  = getParam('utm_content');
+
+    // 1) "캠페인 붙은 이벤트"를 먼저 전송
+    let moved = false;
+    function go() {
+      if (moved) return;
+      moved = true;
+      window.location.href = "https://booking.naver.com/booking/13/bizes/1541146";
+    }
+
+    // GA가 콜백을 못 주는 경우 대비(최대 1.5초 뒤 강제 이동)
+    setTimeout(go, 1500);
+
+    gtag('event', 'bridge_click_reserve', {
+      send_to: 'G-4NLV96SZPZ',
+      campaign_source: utm_source,
+      campaign_medium: utm_medium,
+      campaign_name: utm_campaign,
+      campaign_content: utm_content,
+      event_callback: go
+    });
   </script>
 </head>
 <body></body>
