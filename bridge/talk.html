@@ -1,39 +1,52 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ko">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4NLV96SZPZ"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-4NLV96SZPZ');
-</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script>
-setTimeout(function(){
-window.location.href="https://talk.naver.com/profile/wma32l6";
-},2500);
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4NLV96SZPZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    // ✅ 1) 자동 page_view 막기 (중요)
+    gtag('config', 'G-4NLV96SZPZ', {
+      send_page_view: false,
+      transport_type: 'beacon'
+    });
 
-<script>
-function getParam(name) {
-  return new URLSearchParams(window.location.search).get(name);
-}
+    function qp(name){
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
 
-const utm_source = getParam('utm_source');
-const utm_medium = getParam('utm_medium');
-const utm_campaign = getParam('utm_campaign');
-const utm_content = getParam('utm_content');
+    const utm_source   = qp('utm_source');
+    const utm_medium   = qp('utm_medium');
+    const utm_campaign = qp('utm_campaign');
+    const utm_content  = qp('utm_content');
 
-gtag('config', 'G-4NLV96SZPZ', {
-  'campaign_source': utm_source,
-  'campaign_medium': utm_medium,
-  'campaign_name': utm_campaign,
-  'campaign_content': utm_content,
-  'send_page_view': true
-});
-</script>
+    // ✅ 2) 캠페인 포함해서 "첫 page_view"를 한 번만 전송
+    // (UTM 없으면 빈 값으로 보내되, 최소한 중복 전송은 안 함)
+    gtag('event', 'page_view', {
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search,
+
+      campaign_source: utm_source,
+      campaign_medium: utm_medium,
+      campaign_name: utm_campaign,
+      campaign_content: utm_content
+    });
+
+    // ✅ 3) 전송 완료 후 이동 (최대 2초 대기)
+    setTimeout(function () {
+      gtag('event', 'bridge_to_naver_talk', {
+        event_callback: function () {
+          window.location.href = "https://talk.naver.com/profile/wma32l6";
+        },
+        event_timeout: 2000
+      });
+    }, 300);
+  </script>
 </head>
 <body></body>
 </html>
