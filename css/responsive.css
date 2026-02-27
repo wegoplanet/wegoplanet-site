@@ -2528,6 +2528,10 @@
     right: 0;
     font-size: 1.125rem;
   }
+  main #home .inner h1 {
+    color: c4c4c4;
+    margin-right: 2rem;
+  }
 
   main #reason .inner {
     padding: 6rem 2rem; 

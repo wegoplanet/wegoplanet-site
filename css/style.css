@@ -282,14 +282,15 @@ main #home .inner .textAniBox .highlight {
 }
 
 
-main #home .inner p{
+main #home .inner h1{
   position: absolute;
   color: #c4c4c4;
   bottom: 10%;
   right: -9%;
   font-size: 1.8rem;
+  font-weight: normal;
 }
-main #home .inner p br {
+main #home .inner h1 br {
   display: block;
 }
 
@@ -550,7 +551,7 @@ main #result .inner .container .box-gr p {
 
 /* client */
 
-main #client .inner {
+/* main #client .inner {
   width: 100%;
   text-align: center;
   padding-bottom: 10rem;
@@ -602,7 +603,7 @@ main #client .inner .wrap img:hover {
   to {
     transform: translateX(-50%);
   }
-}
+} */
 
 
 /* ask */
@@ -1215,7 +1216,7 @@ main .detail.viral .part:last-child .title {
 
 
 /* PUBLIC */
-main .banner.public {
+/* main .banner.public {
   background: linear-gradient(180deg,rgb(180, 243, 62) 0%, rgba(0, 0, 0, 1) 100%);
 }
 main .banner.public img {
@@ -1262,5 +1263,5 @@ main .detail.public .inner .container .content .right p {
 main .detail.public .inner .container .content .right p span {
   font-weight: 600;
 }
-
+ */
 
